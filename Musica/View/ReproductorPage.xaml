@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Musica.View.ReproductorPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Aquí puedes agregar tus elementos de interfaz de usuario -->
+            <Label Text="Reproductor de Música" FontSize="24" HorizontalOptions="CenterAndExpand" Margin="0,20,0,10" />
+            <ListView ItemsSource="{Binding ListaCanciones}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Titulo}" Detail="{Binding Artista}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Verificar Permiso" Command="{Binding VerificarPermisoCommand}" />
+            <Button Text="Reproducir" Command="{Binding ReproducirCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
